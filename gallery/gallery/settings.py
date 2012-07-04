@@ -26,6 +26,8 @@ DATABASES = {
     }
 }
 
+ROOT_URL = '/gallery/'
+
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
@@ -59,7 +61,7 @@ MEDIA_ROOT = os.path.join(_PATH,'media')
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = '/media/'
+MEDIA_URL = ROOT_URL + 'media/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -69,7 +71,7 @@ STATIC_ROOT = os.path.join(_PATH,'static')
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/static/'
+STATIC_URL = ROOT_URL + 'static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -85,6 +87,10 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
+
+
+LOGIN_URL = ROOT_URL + 'login/'
+
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '+v(0u51%%q%u!2p_2$_+^3+!^13^10l-byt_x9kj0(xx7@@eb#'
