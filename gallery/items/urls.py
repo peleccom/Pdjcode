@@ -1,11 +1,11 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls.defaults import *
 from models import Item,Photo
 
 urlpatterns = patterns('django.views.generic',
 url(r'^$','simple.direct_to_template',
         kwargs = {
                   'template': 'index.html',
-                  'extra_context' : {'item_list':lambda:Item.objects.all()}
+                  'extra_context' : {'item_list':Item.objects.all}
                   },
         name='index'),
 url(r'^items/$','list_detail.object_list',
@@ -21,7 +21,7 @@ url(r'^items/(?P<object_id>\d+)/$', 'list_detail.object_detail',
               'template_name': 'items_detail.html'},
      name= 'item_detail'
      ),
-url(r'^(photos/?P<object_id>\d+)/$', 'list_detail.object_detail',
+url(r'^photos/(?P<object_id>\d+)/$', 'list_detail.object_detail',
     kwargs = {
               'queryset':Photo.objects.all(),
               'template_name': 'photos_detail.html'},
