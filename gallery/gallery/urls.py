@@ -2,7 +2,7 @@ from django.conf.urls import patterns, include, url
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
-from django.conf.urls.default import *
+#from django.conf.urls.default import *
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -12,7 +12,7 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'gallery.views.home', name='home'),
     # url(r'^gallery/', include('gallery.foo.urls')),
-url(r'^%s' % settings.ROOT_URL[1:], include('gallery.real_url')),
+url(r'^%s' % settings.ROOT_URL[1:], include('gallery.real_urls')),
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 

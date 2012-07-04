@@ -1,4 +1,3 @@
-from django.conf.urls.default import *
 from django.conf.urls import patterns, include, url
 from models import Item,Photo
 
@@ -22,7 +21,7 @@ url(r'^items/(?P<object_id>\d+)/$', 'list_detail.object_detail',
               'template_name': 'items_detail.html'},
      name= 'item_detail'
      ),
-url(r'^photos/?P<object_id>\d+)/$', 'list_detail.object_detail',
+url(r'^(photos/?P<object_id>\d+)/$', 'list_detail.object_detail',
     kwargs = {
               'queryset':Photo.objects.all(),
               'template_name': 'photos_detail.html'},
