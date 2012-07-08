@@ -15,7 +15,7 @@ class Item(models.Model):
     
     @models.permalink
     def get_absolute_url(self):
-        return ('item_detail',None, {'object_id':self.id})
+        return ('item_detail',None, {'pk':self.id})
 
 
 class Photo(models.Model):
@@ -32,7 +32,7 @@ class Photo(models.Model):
     
     @models.permalink
     def get_absolute_url(self):
-        return ("photo_detail",None,{'object_id':self.id})
+        return ("photo_detail",None,{'pk':self.id})
     
 class PhotoInline(admin.StackedInline):
     model = Photo
