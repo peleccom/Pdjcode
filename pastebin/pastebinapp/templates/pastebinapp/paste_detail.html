@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}{{ object }}{% endblock %}
+{% block content %}
+<h1>{{ object }}</h1>
+<p>Syntax: {{ object.get_syntax_display }}<br>
+Date: {{ object.timestamp|date:"r" }}</p>
+<code><pre name="code" class="brush: {{ object.get_syntax_display|lower }}">
+    {{ object.content }}</pre></code>
+{% endblock %}

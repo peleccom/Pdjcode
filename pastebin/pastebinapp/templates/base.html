@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>{% block title %}{% endblock %}</title>
+<style type="text/css">
+    body { margin: 30px; font-family: sans-serif; background: #fff; }
+    h1 { background: #ccf; padding: 20px; }
+    pre { padding: 20px; background: #ddd; }
+</style>
+	<script type="text/javascript" src="/static/js/shCore.js"></script>
+	<script type="text/javascript" src="/static/js/shBrushJScript.js"></script>
+	<link type="text/css" rel="stylesheet" href="/static/css/shCoreDefault.css"/>
+	<script language="javascript" src="/static/js/shBrushPython.js"></script>
+	<script language="javascript" src="/static/js/shBrushXml.js"></script>
+	<script language="javascript" src="/static/js/shBrushSql.js"></script>
+	<script language="javascript" src="/static/js/shBrushCss.js"></script>
+	<script language="javascript" src="/static/js/shBrushPlain.js"></script>
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+<body>
+    <p><a href="/paste/add/">Add one</a> &bull; <a href="/paste/">List all</a></p>
+    {% block content %}{% endblock %}
+</body>
+</html>
