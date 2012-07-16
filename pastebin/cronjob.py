@@ -2,14 +2,15 @@
 try:
     import os
     os.environ['DJANGO_SETTINGS_MODULE'] = 'pastebin.settings'
-    import datetime
+    from django.utils import timezone
     from django.conf import settings
     from pastebinapp.models import Paste
 
-    today = datetime.date.today()
-    cutoff = (today - datetime.timedelta(days=settings.EXPIRY_DAYS))
+    today = timezone.now()
+    cutoff = (today - timezone.timedelta(days=settings.EXPIRY_DAYS))
+    print(cutoff)
     Paste.objects.filter(timestamp__lt=cutoff).delete()
 except Exception,e:
     print e
 
-input()
+raw_input()
