@@ -1,0 +1,25 @@
+﻿<style type"text/css">
+td, th {
+padding: 4px;
+width: 30px;
+background: #666;
+}
+td {text-align:right;
+}
+</style>
+<table>
+    <thead>
+        <tr><th colspan="7">{{ month }} {{ year }}</th></tr>
+        <tr>{% for dayname in daynames %}<th>{{ dayname }}</th>{% endfor %}</tr>
+     </thead>
+     <tbody>
+        {% for week in weeks %}
+            <tr>
+            {% for day in week %}
+                <td>{{ day }}</td>
+            {% endfor %}
+            </tr>
+         {% endfor %}
+     </tbody>
+</table>
+    
