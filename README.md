@@ -1,4 +1,4 @@
 Pdjcode
 =======
 
-django razr web prilojeniy examples
+django examples to Jeff Forcier django book
